@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const emailPattern = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+
+        function isEmailValid(email) {
+            return emailPattern.test(email);
+        }
+
+        // Mẫu email hợp lệ
+        const validEmails = [
+            'a@gmail.com',
+            'ab@yahoo.com',
+            'abc@hotmail.com'
+        ];
+
+        // Mẫu email không hợp lệ
+        const invalidEmails = [
+            '@gmail.com',
+            'ab@gmail.',
+            '@#abc@gmail.com'
+        ];
+
+        // Kiểm tra mẫu email hợp lệ
+        validEmails.forEach(email => {
+            console.log(`${email} is ${isEmailValid(email) ? 'valid' : 'invalid'}`);
+        });
+
+        // Kiểm tra mẫu email không hợp lệ
+        invalidEmails.forEach(email => {
+            console.log(`${email} is ${isEmailValid(email) ? 'valid' : 'invalid'}`);
+        });
+    </script>
+</body>
+
+</html>
