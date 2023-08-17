@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isUsernameValid(username) {
+            const usernamePattern = /^[a-z0-9_]{6,}$/;
+            return usernamePattern.test(username);
+        }
+        console.log(isUsernameValid('username123')); // true
+        console.log(isUsernameValid('user_name')); // true
+        console.log(isUsernameValid('USER_NAME')); // false (chứa ký tự viết hoa)
+        console.log(isUsernameValid('user')); // false (ít hơn 6 ký tự)
+        console.log(isUsernameValid('user@name')); // false (chứa ký tự đặc biệt)
+    </script>
+</body>
+
+</html>
