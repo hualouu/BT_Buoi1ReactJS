@@ -9,15 +9,41 @@
 
 <body>
     <script>
+        javascript
+        Copy
+        const usernamePattern = /^[_a-z0-9]{6,}$/;
+
         function isUsernameValid(username) {
-            const usernamePattern = /^[a-z0-9_]{6,}$/;
             return usernamePattern.test(username);
         }
-        console.log(isUsernameValid('username123')); // true
-        console.log(isUsernameValid('user_name')); // true
-        console.log(isUsernameValid('USER_NAME')); // false (chứa ký tự viết hoa)
-        console.log(isUsernameValid('user')); // false (ít hơn 6 ký tự)
-        console.log(isUsernameValid('user@name')); // false (chứa ký tự đặc biệt)
+
+        // Mẫu account hợp lệ
+        const validUsernames = [
+            '123abc_',
+            '_abc123',
+            '______',
+            '123456',
+            'abcdefg'
+        ];
+
+        // Mẫu account không hợp lệ
+        const invalidUsernames = [
+            '.@',
+            '12345',
+            '1234_',
+            'abcde'
+        ];
+
+        // Kiểm tra mẫu account hợp lệ
+        validUsernames.forEach(username => {
+            console.log(`${username} is ${isUsernameValid(username) ? 'valid' : 'invalid'}`);
+        });
+
+        // Kiểm tra mẫu account không hợp lệ
+        invalidUsernames.forEach(username => {
+            console.log(`${username} is ${isUsernameValid(username) ? 'valid' : 'invalid'}`);
+        });
+
     </script>
 </body>
 
